@@ -3,7 +3,7 @@
     require_once __DIR__."/../src/Car.php";
 
     $app = new Silex\Application();
-
+    //created Silex object
     $app->get("/", function() {
       return "<!DOCTYPE html>
       <html>
@@ -29,6 +29,7 @@
       </body>
       </html>";
     });
+    //Input form for app
 
     $app->get("/car_list", function() {
       $porsche = new Car("2014 Porsche 911", "images/911.jpeg", 7864, 114991 );
@@ -42,12 +43,14 @@
       $mercedes->setName("2009 Mercedes Benz CLS550");
       $ford->setImage("images/pinto.jpeg");
       $cars = array($porsche, $ford, $lexus, $mercedes);
+      //making new car objects and putting them into an array
       $cars_matching_search = array();
       foreach ($cars as $car) {
           if ($car->getPrice() <= $_GET["price"] && $car->getMiles() <= $_GET["mileage"]) {
               array_push($cars_matching_search, $car);
           }
       }
+      //compares user input to the values in the cars
 
       if (empty($cars_matching_search)) {
         $list_of_cars = "<p> Sorry no cars match your search </p>";
@@ -62,11 +65,9 @@
           </ul>';
         }
       }
-
-
-
-
-
+      //if there are cars matching the search this creates a list of those cars
+      //if no matching cars, app returns Sorry no cars match your search
+      //list_of_cars builds unordered lists for all of the cars that match search
       return "<!DOCTYPE html>
       <html>
       <head>
