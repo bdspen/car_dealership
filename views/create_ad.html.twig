@@ -4,9 +4,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   </head>
   <body>
-    <form name="ad" action="/display_ad" method="post">
+    <div class="container">
+      <form name="ad" action="/display_ad" method="post">
+        <div class="form-group">
 
-    </form>
 
+        <label for="model">Vehicle Model</label>
+        <input type="text" name="model">
+
+        <label for="price">Price:</label>
+        <input type="text" name="price">
+
+        <label for="image">Image URL </label>
+        <input type="text" name="image">
+
+        <label for="miles">Mileage</label>
+        <input type="number" name="miles">
+
+        <button name="submit">Submit</button>
+        </div>
+      </form>
+  </div>
   </body>
 </html>
