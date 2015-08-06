@@ -5,17 +5,21 @@
   </head>
   <body>
     <h1>show all ads</h1>
-    {% if cars is not empty %}
-      <p> Cars that match your search:</p>
-      <ul>
-        {% for car in cars %}
-          <li>{{ car.getName }} </li>
-          <li>{{ car.getPrice }} </li>
-          <li>{{ car.getMiles }} </li>
-          <li><img src= {{ car.getImage }}/> </li>
-        {% endfor %}
-      </ul>
+    {% if cars is empty %}
+      <h1>No cars match you search</h1>
+
+    {% else %}
+    <p> Cars that match your search:</p>
+    <ul>
+      {% for car in cars %}
+      <li> {{ car.getName }} </li>
+        <li>{{ car.getPrice }} </li>
+        <li>{{ car.getMiles }} </li>
+        <li><img src= {{ car.getImage }} width = "100px"> </li>
+      {% endfor %}
       {% endif %}
+
+    
 <br><br>
 <a href='/create_ad'>A Link to the form to Create an Ad </a>
 <a href="/">A link to a form to filter ads. </a>

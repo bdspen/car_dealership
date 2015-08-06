@@ -10,18 +10,21 @@
 
 
         <label for="model">Vehicle Model</label>
-        <input type="text" name="model">
+        <input type="text" id = "model" name="model">
 
         <label for="price">Price:</label>
-        <input type="text" name="price">
+        <input type="text"  id = "price" name="price">
 
         <label for="image">Image URL </label>
-        <input type="text" name="image">
+        <input type="text"  id = "image" name="image">
 
         <label for="miles">Mileage</label>
-        <input type="number" name="miles">
+        <input type="number"  id = "miles" name="miles">
 
         <button name="submit">Submit</button>
+
+        <form action='/delete_tasks' method='post'>
+        <button type='submit'>Clear All</button>
         </div>
       </form>
   </div>
