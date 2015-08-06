@@ -4,14 +4,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>show all ads</h1>
     {% if cars is empty %}
-      <h1>No cars match you search</h1>
+      <h1>No cars match your search</h1>
 
     {% else %}
     <p> Cars that match your search:</p>
     <ul>
-      {% for car in cars %}
+      {% for car in cars|reverse %}
       <li> {{ car.getName }} </li>
         <li>{{ car.getPrice }} </li>
         <li>{{ car.getMiles }} </li>
@@ -19,7 +18,7 @@
       {% endfor %}
       {% endif %}
 
-    
+
 <br><br>
 <a href='/create_ad'>A Link to the form to Create an Ad </a>
 <a href="/">A link to a form to filter ads. </a>

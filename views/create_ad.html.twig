@@ -5,7 +5,7 @@
   </head>
   <body>
     <div class="container">
-      <form name="ad" action="/display_ad" method="post">
+      <form name="ad" action="/show_all" method="post">
         <div class="form-group">
 
 
@@ -22,10 +22,10 @@
         <input type="number"  id = "miles" name="miles">
 
         <button name="submit">Submit</button>
-
-        <form action='/delete_tasks' method='post'>
-        <button type='submit'>Clear All</button>
         </div>
+      </form>
+      <form action='/delete_ads' method='get'>
+        <button type='submit'>Clear All</button>
       </form>
   </div>
   </body>
