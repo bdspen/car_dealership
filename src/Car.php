@@ -5,6 +5,7 @@ class Car
     private $price;
     private $image;
     private $miles;
+    
     function __construct($car_model, $car_image, $car_miles, $car_price = 45000)
     {
       $this->make_model = $car_model;
@@ -12,6 +13,7 @@ class Car
       $this->miles = $car_miles;
       $this->price = $car_price;
     }
+    // Getters/Setters------------------------------------------
     function setName($new_name)
     {
       $changed_name = (string) $new_name;
@@ -53,6 +55,23 @@ class Car
     {
       return $this->image;
     }
+//Other Functions---------------------------------
+    function save()
+    {
+      array_push($_SESSION['list_of_cars'], $this);
+    }
+
+    static function getAll()
+    {
+      return $_SESSION['list_of_cars'];
+    }
+
+    static function deleteAll()
+    {
+
+      $_SESSION['list_of_cars'] = array();
+    }
+
 }
 
 ?>
