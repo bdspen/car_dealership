@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>DISPLAY AD page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>display ad page</h1>
+    {% if cars is not empty %}
+      <p> Cars that match your search:</p>
+      <ul>
+        {% for car in cars %}
+          <li>{{ car.getName }} </li>
+          <li>{{ car.getPrice }} </li>
+          <li>{{ car.getMiles }} </li>
+          <li>{{ car.getImage }} </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+  </body>
+</html>
